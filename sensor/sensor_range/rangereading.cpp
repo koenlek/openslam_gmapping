@@ -21,7 +21,7 @@ RangeReading::RangeReading(unsigned int n_beams, const double* d, const RangeSen
 }
 
 RangeReading::~RangeReading(){
-	//cerr << __PRETTY_FUNCTION__ << ": RangeReading object destructed" << endl;
+//	cerr << __PRETTY_FUNCTION__ << ": CAZZZZZZZZZZZZZZZZZZZZOOOOOOOOOOO" << endl;
 }
 
 unsigned int RangeReading::rawView(double* v, double density) const{

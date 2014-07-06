@@ -458,7 +458,6 @@ bool GridSlamProcessor::processScan(const RangeReading & reading, int adaptParti
     else {
       m_infoStream << "Registering First Scan" << endl;
       for (ParticleVector::iterator it = m_particles.begin(); it != m_particles.end(); it++) {
-        //m_matcher.setgenerateMap(true);//KL TMP
         m_matcher.invalidateActiveArea();
         m_matcher.computeActiveArea(it->map, it->pose, plainReading);
         m_matcher.registerScan(it->map, it->pose, plainReading);
