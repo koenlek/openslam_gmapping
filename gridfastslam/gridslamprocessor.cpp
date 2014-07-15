@@ -515,6 +515,19 @@ int GridSlamProcessor::getBestParticleIndex() const
   return (int)bi;
 }
 
+//KL TMP
+int GridSlamProcessor::getWorstParticleIndex() const
+{
+  unsigned int bi = 0;
+  double bw = std::numeric_limits<double>::max();
+  for (unsigned int i = 0; i < m_particles.size(); i++)
+    if (bw > m_particles[i].weightSum) {
+      bw = m_particles[i].weightSum;
+      bi = i;
+    }
+  return (int)bi;
+}
+
 void GridSlamProcessor::onScanmatchUpdate()
 {
 }

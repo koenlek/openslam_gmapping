@@ -69,7 +69,8 @@ namespace GMapping {
       TNode* parent;
 
       /**The range reading to which this node is associated*/
-      const RangeReading* reading;
+      //const RangeReading* reading; //KL Orig
+      RangeReading* reading;
 
       /**The number of childs*/
       unsigned int childs;
@@ -170,9 +171,13 @@ namespace GMapping {
     std::ostream& infoStream();
     /**@returns the particles*/
     inline const ParticleVector& getParticles() const {return m_particles; }
+
+    /**@returns the particles read/write*/
+    inline ParticleVector& getParticlesRW() {return m_particles;} //KL
     
     inline const std::vector<unsigned int>& getIndexes() const{return m_indexes; }
     int getBestParticleIndex() const;
+    int getWorstParticleIndex() const; //KL TMP
     //callbacks
     virtual void onOdometryUpdate();
     virtual void onResampleUpdate();
@@ -316,8 +321,9 @@ namespace GMapping {
     inline void normalize();
     
     // return if a resampling occured or not
-    inline bool resample(const double* plainReading, int adaptParticles, 
-			 const RangeReading* rr=0);
+    //inline bool resample(const double* plainReading, int adaptParticles, const RangeReading* rr=0); //KL Orig
+    inline bool resample(const double* plainReading, int adaptParticles, RangeReading* rr=0);
+
     
     //tree utilities
     

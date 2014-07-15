@@ -42,6 +42,8 @@ class Map{
 			Point min=map2world(0,0), max=map2world(IntPoint(m_mapSizeX-1, m_mapSizeY-1)); 
 			xmin=min.x, ymin=min.y,  xmax=max.x, ymax=max.y; 
 		}
+		//KL added
+		inline void setCenter(Point center) {m_center = center;}
 		
 		inline Cell& cell(int x, int y) {
 		  return cell(IntPoint(x, y));
